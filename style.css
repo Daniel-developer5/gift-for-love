@@ -1,0 +1,137 @@
+body {
+    overflow: hidden;
+    margin: 0;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease .3s;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.head-wrap, .body-wrap {
+    transition: ease 1.5s;
+}
+
+.head-wrap {
+    flex-direction: column;
+}
+
+.head-wrap, .box-head, .box-body, 
+.shadow, .ears {
+    display: flex;
+    justify-content: center;
+}
+
+.ears span {
+    width: 30px;
+    height: 20px;
+    border-radius: 50%;
+    border: 10px solid #fdc56d;
+    transform: skew(30deg, 20deg);
+}
+
+.ears span:last-child {
+    transform: skew(-30deg, -20deg);
+}
+
+.box-head, .box-body {
+    background-color: #65739c;
+}
+
+.box-head {
+    width: 280px;
+    height: 50px;
+}
+
+.shadow, .box-body {
+    width: 250px;
+}
+
+.shadow {
+    background-color: rgba(56, 64, 87, .8);
+    height: 30px;
+}
+
+.box-body {
+    height: 170px;
+    position: relative;
+}
+
+.box-text {
+    position: absolute;
+    top: 35%;
+    color: #0b228b;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: blick .8s infinite;
+    transition: ease .3s;
+}
+
+.box:hover .box-text {
+    animation: none;
+    transform: scale(1.2);
+}
+
+.tape {
+    width: 30px;
+    height: 100%;
+    background-color: #fdc56d;
+}
+
+.shadow > .tape {
+    background-color: rgba(197, 143, 56, .8);
+}
+
+.main-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 70px;
+    font-family: 'Lobster', cursive;
+    line-height: 90px;
+    transition: ease .5s;
+    transform: scale(0);
+    color: #fff;
+}
+
+.main-text span {
+    text-shadow: 3px 3px 4px #000, 0 0 30px #ffd900;
+    animation: shadow 2s infinite;
+}
+
+canvas {
+    position: absolute;
+    border: none;
+    z-index: 2;
+    display: block;
+}
+
+@keyframes blick {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes shadow {
+    50% {
+        text-shadow: 3px 3px 4px #000, 0 0 60px #ffd900;
+    }
+}
