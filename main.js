@@ -38,7 +38,7 @@ function canvasOperation() {
             ],
             randomColor = Math.floor(Math.random() * 4)
 
-        for (let i = 0; i < 10; ++i) {
+        for (let i = 0; i < 5; ++i) {
             x.push(Math.random() * w)
             y.push(Math.random() * h)
         }
@@ -73,7 +73,9 @@ function main() {
         }, time)
         time += 50
     }
-    canvasOperation()
+    setTimeout(() => {
+        canvasOperation()
+    }, 100)
 }
 
 box.addEventListener('click', main)
